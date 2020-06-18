@@ -1,10 +1,13 @@
----
-- hosts: all
-  become: yes
-  tasks:
-  - name: Update and upgrade apt packages
+- name: Update all packages
+  hosts: linux-clients
   become: true
-  apt:
-    upgrade: yes
-    update_cache: yes
-    cache_valid_time: 86400 #One day
+
+  tasks:
+  - name: Update package lists
+    apt:
+      update_cache: yes
+
+  - name: Update packages
+    apt:
+      name: "*"
+      state: latest
