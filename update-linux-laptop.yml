@@ -1,5 +1,5 @@
 - name: Update all packages
-  hosts: linux-clients
+  hosts: all
   become: true
 
   tasks:
