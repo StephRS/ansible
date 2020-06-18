@@ -2,7 +2,6 @@
   hosts: all
   become: true
   become_user: ubuntu
-  become_method: sudo
   tasks:
   - name: Update package lists
     apt:
