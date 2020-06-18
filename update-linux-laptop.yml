@@ -1,6 +1,6 @@
 ---
 - hosts: all
   tasks:
-  become: yes
     - name: Updates apt cache
       action: apt update_cache=true
+  become: yes
