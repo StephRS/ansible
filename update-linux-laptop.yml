@@ -1,7 +1,7 @@
 - name: Update all packages
   hosts: all
   become: true
-  become_user: ubuntu
+  remote_user: ubuntu
   tasks:
   - name: Update package lists
     apt:
