@@ -1,2 +1,3 @@
-- name: Reboot the machine with all defaults
+---
+- name: Unconditionally reboot the machine with all defaults
   win_reboot:
