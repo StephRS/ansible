@@ -2,14 +2,7 @@
 - name: Add a user
   hosts: all
   gather_facts: false
-  
-  vars_prompt:
-    - name: username
-      prompt: "What is the username?"
-      private: no
-    - name: password
-      prompt: "What is the password?"
-      
+       
   tasks:
     - name: Add User
       win_user:
