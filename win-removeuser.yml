@@ -1,0 +1,4 @@
+- name: Ensure user is absent
+  win_domain_user:
+    name: Stephan
+    state: absent
