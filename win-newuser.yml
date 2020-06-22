@@ -6,6 +6,6 @@
   tasks:
     - name: Add User
       win_user:
-        name: {{USERNAME}}
-        password: {{PASSWORD}}
+        name: "{{ USERNAME }}"
+        password: "{{ PASSWORD }}"
         state: present
