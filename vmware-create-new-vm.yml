@@ -2,32 +2,32 @@
   hosts: all
   gather_facts: false
        
-- name: Create a virtual machine on ESXi
-  vmware_guest:
-    hostname: "192.168.178.10"
-    username: "root"
-    password: ""
-    validate_certs: no
-    folder: /TEST/vm/
-    name: test_vm_0001
-    state: poweredon
-    guest_id: centos64Guest
+  - name: Create a virtual machine on ESXi
+    vmware_guest:
+      hostname: "192.168.178.10"
+      username: "root"
+      password: ""
+      validate_certs: no
+      folder: /TEST/vm/
+      name: test_vm_0001
+      state: poweredon
+      guest_id: centos64Guest
     # This is hostname of particular ESXi server on which user wants VM to be deployed
     esxi_hostname: "localhost.home"
-    disk:
-    - size_gb: 10
-      type: thin
-      datastore: datastore1
-    hardware:
-      memory_mb: 512
-      num_cpus: 4
-      scsi: paravirtual
-    networks:
-    - name: VM Network
-      mac: aa:bb:dd:aa:00:14
-      ip: 192.168.178.18
-      netmask: 255.255.255.0
-      device_type: vmxnet3
-    wait_for_ip_address: yes
-  delegate_to: localhost
-  register: deploy_vm
+      disk:
+      - size_gb: 10
+        type: thin
+        datastore: datastore1
+      hardware:
+        memory_mb: 512
+        num_cpus: 4
+        scsi: paravirtual
+      networks:
+      - name: VM Network
+        mac: aa:bb:dd:aa:00:14
+        ip: 192.168.178.18
+        netmask: 255.255.255.0
+        device_type: vmxnet3
+      wait_for_ip_address: yes
+    delegate_to: localhost
+    register: deploy_vm
