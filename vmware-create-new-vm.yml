@@ -1,6 +1,6 @@
 ---
-  hosts: all
 - name: Create a virtual machine on ESXi
+  hosts: all
     vmware_guest:
       hostname: "192.168.178.10"
       username: "root"
