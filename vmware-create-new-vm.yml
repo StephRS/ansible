@@ -1,5 +1,4 @@
 ---
-- name: Windows Updates
   hosts: all
   gather_facts: false
        
