@@ -4,7 +4,7 @@
   gather_facts: false
        
   tasks:
-    - name: Add User
+    - name: Add the user
       win_user:
         name: "{{ USERNAME }}"
         password: "{{ PASSWORD }}"
