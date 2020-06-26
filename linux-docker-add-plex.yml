@@ -20,3 +20,34 @@
         command: "{{ default_container_command }}"
         state: present
       with_sequence: count={{ create_containers }}
+      
+    - name: Create directory Plex
+      file:
+        path: /home/ubuntu/plex2
+        state: directory
+      
+    - name: Create directory Plex/Transcode
+      file:
+        path: /home/ubuntu/plex2/transcode
+        state: directory
+        mode: "u=rw,g=wx,o=rwx"
+        
+    - name: Create directory Plex/Data
+      file:
+        path: /home/ubuntu/plex2/data
+        state: directory
+        mode: "u=rw,g=wx,o=rwx"
+        
+    - name: Create directory Plex/Temp
+      file:
+        path: /home/ubuntu/plex2/temp
+        state: directory
+        mode: "u=rw,g=wx,o=rwx"
+      
+    - name: Copy plex-docker.yml
+      copy:
+        src: /files/plex-docker.yml
+        dest: /home/ubuntu/plex2/plex-docker.yml
+        owner: ubuntu
+        group: ubuntu
+        mode: '0777'
