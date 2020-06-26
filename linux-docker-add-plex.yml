@@ -3,7 +3,7 @@
   become: true
   vars:
     create_containers: 1
-    default_container_name: Plex
+    default_container_name: Plex2
     default_container_image: plexinc/pms-docker
     default_container_command: sleep 1d
 
