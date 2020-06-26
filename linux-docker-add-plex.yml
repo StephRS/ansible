@@ -44,8 +44,11 @@
         state: directory
         mode: "u=rw,g=wx,o=rwx"
       
-    - name: Download foo.conf
+    - name: Download Plex.yml from Github
       get_url:
         url: https://raw.githubusercontent.com/StephRS/ansible/master/docker-plex-start-container.yml
         dest: /home/ubuntu/plex2/plex.yml
         mode: '0777'
+           
+    - name: Execute Plex.yml
+      command: ./home/ubuntu/plex2/plex.yml
