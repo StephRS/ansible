@@ -51,4 +51,5 @@
         mode: '0777'
            
     - name: Execute Plex.yml
-      command: ./home/ubuntu/plex2/plex.yml
+      command: docker-compose -f /home/ubuntu/plex2/plex.yml up
+      become: yes
