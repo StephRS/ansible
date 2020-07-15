@@ -3,11 +3,10 @@
   hosts: all
   gather_facts: false
   
-  - name: Install all security updates with automatic reboots
-    win_updates:
-      category_names:
-      - SecurityUpdates
-      reboot: yes
+  win_updates:
+    category_names:
+    - SecurityUpdates
+    reboot: yes
 
         
 
