@@ -1,0 +1,18 @@
+---
+- name: Add server to TRAINING.LOCAL
+  hosts: all
+  gather_facts: false
+       
+  tasks:
+    - name: Add server to TRAINING.LOCAL  
+    - win_domain_membership:
+        dns_domain_name: training.local
+        hostname: windowsserver2019
+        domain_admin_user: administrator@training.local
+        domain_admin_password: Welkom01
+        domain_ou_path: "OU=Servers,DC=training,DC=local"
+        state: domain
+      register: domain_state
+
+    - win_reboot:
+      when: domain_state.reboot_required
