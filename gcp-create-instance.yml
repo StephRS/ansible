@@ -1,4 +1,6 @@
-- name: create a disk
+---
+- name: Create a virtual machine on GCP
+  hosts: all
   google.cloud.gcp_compute_disk:
     name: disk-instance
     size_gb: 50
