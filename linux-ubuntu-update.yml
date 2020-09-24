@@ -12,7 +12,7 @@
       register: reboot_required_file
       stat: path=/var/run/reboot-required get_md5=no
 
-    - name: Reboot the box if kernel updated
+    - name: Reboot the server if kernel updated
       reboot:
         msg: "Reboot initiated by Ansible for kernel updates"
         connect_timeout: 5
