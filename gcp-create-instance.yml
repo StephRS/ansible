@@ -1,6 +1,4 @@
----
 - name: create a disk
-  hosts: all
   google.cloud.gcp_compute_disk:
     name: disk-instance
     size_gb: 50
