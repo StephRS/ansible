@@ -8,7 +8,7 @@
       gcp_compute_disk:
         name: ubuntu-1604-disk
         size_gb: 20
-        source_image: projects/ubuntu-os-cloud/global/images/family/ubuntu-1604-lts
+        source_image: projects/ubuntu-os-cloud/global/images/family/ubuntu-2004-lts
         zone: us-central1-a
         project: "{{ gcp_project }}"
         auth_kind: "{{ gcp_cred_kind }}"
@@ -26,7 +26,7 @@
 
     - name: create the VM instance
       gcp_compute_instance:
-        name: ubuntu-1604-vm
+        name: ubuntu-2004-vm
         machine_type:  e2-micro
         disks:
         - auto_delete: 'true'
