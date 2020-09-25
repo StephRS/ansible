@@ -1,19 +1,18 @@
 - name: Create instance(s)
   hosts: localhost
   connection: local
-  gather_facts: no
-
+  gather_facts: 'no'
   vars:
-    project_id: project-id
+    project_id: ansible-289012
     machine_type: n1-standard-1
     image: debian-7
-
   tasks:
-   - name: Launch instances
-     gce:
-         instance_names: dev
-         machine_type: "{{ machine_type }}"
-         image: "{{ image }}"
-         service_account_email: "{{ service_account_email }}"
-         credentials_file: "{{ credentials_file }}"
-         project_id: "{{ project_id }}"
+    - name: Launch instances
+      gce:
+        instance_names: dev
+        machine_type: '{{ machine_type }}'
+        image: '{{ image }}'
+        service_account_email: '{{ service_account_email }}'
+        credentials_file: '{{ credentials_file }}'
+        project_id: '{{ project_id }}'
+
