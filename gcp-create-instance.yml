@@ -2,7 +2,7 @@
   hosts: localhost
   vars:
      gcp_project: ansible-289012
-     gcp_cred_kind: 125290713887-compute@developer.gserviceaccount.com
+     gcp_cred_kind: serviceaccount
   tasks:
     - name: create a disk mapped from RHEL8 image
       gcp_compute_disk:
