@@ -6,8 +6,8 @@
   tasks:
     - name: create a disk mapped from RHEL8 image
       gcp_compute_disk:
-        name: disk-instance
-        size_gb: 50
+        name: rhel8
+        size_gb: 20
         source_image: projects/rhel-cloud/global/images/rhel-8-v20190905
         zone: us-central1-a
         project: "{{ gcp_project }}"
@@ -33,7 +33,7 @@
           boot: 'true'
           source: "{{ disk }}"
         network_interfaces:
-          - network: ""
+        - network: default
           access_configs:
           - name: External NAT
             nat_ip: "{{ address }}"
