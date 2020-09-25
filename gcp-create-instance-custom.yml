@@ -41,7 +41,7 @@
         project: "{{ gcp_project }}"
         auth_kind: "{{ gcp_cred_kind }}"
         state: present
-    - name: Show RHEL8 Instance Details
+    - name: Show VM Instance Details
       debug:
-        msg: "The RHEL8 instance is accessible at {{ address.address }}"
+        msg: "The VM instance is accessible at {{ address.address }}"
 
