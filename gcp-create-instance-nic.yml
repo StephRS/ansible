@@ -9,7 +9,7 @@
         name: rhel8
         size_gb: 20
         source_image: projects/rhel-cloud/global/images/rhel-8-v20190905
-        zone: us-central1-a
+        zone: us-central1-
         project: "{{ gcp_project }}"
         auth_kind: "{{ gcp_cred_kind }}"
         state: present
